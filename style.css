@@ -1,0 +1,153 @@
+.mondrian {
+
+  display: grid;
+
+  width: 100vw;
+  height: 100vh;
+
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+
+  gap: 10px;
+
+  background: black;
+  padding: 10px;
+
+  box-sizing: border-box;
+}
+
+.block {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.red {
+  background: #d62828;
+}
+
+.blue {
+  background: #1d4ed8;
+}
+
+.yellow {
+  background: #facc15;
+}
+
+.white,
+.white2 {
+  background: #f8f8f8;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #f5f5f5;
+  transition: 1s;
+}
+
+.sun {
+
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  z-index: 999;
+
+  cursor: pointer;
+
+  background:
+    radial-gradient(circle,
+    #ffe066 20%,
+    #ffb703 60%,
+    #fb8500 100%);
+
+  box-shadow:
+    0 0 40px #ffb703,
+    0 0 80px #fb8500;
+
+  transition: 1s;
+}
+
+@keyframes pulse {
+
+  0% {
+    box-shadow: 0 0 20px gold;
+  }
+
+  50% {
+    box-shadow: 0 0 60px orange;
+  }
+
+  100% {
+    box-shadow: 0 0 20px gold;
+  }
+}
+
+body.eclipse {
+  background: #050505;
+}
+
+body.eclipse .sun {
+
+  background:
+    radial-gradient(circle,
+    #000 65%,
+    #d76432 72%,
+    #ec9340 75%);
+
+  box-shadow:
+    0 0 30px #fb6203,
+    0 0 90px #ff5b03,
+    0 0 140px #ffd60a;
+}
+
+.block:hover {
+  transform: scale(0.98);
+  filter: brightness(1.1);
+}
+
+body.eclipse .red {
+  background: #7f1d1d;
+}
+
+body.eclipse .blue {
+  background: #172554;
+}
+
+body.eclipse .yellow {
+  background: #a16207;
+}
+
+body.eclipse .white,
+body.eclipse .white2 {
+  background: #111;
+}
+
+.big-red {
+  grid-column: span 4;
+  grid-row: span 3;
+}
+
+.tall-blue {
+  grid-column: span 3;
+  grid-row: span 4;
+}
+
+.small-yellow {
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+.large-white {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
